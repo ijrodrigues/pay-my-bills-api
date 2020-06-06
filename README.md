@@ -13,19 +13,12 @@ This project will allows you to Schedule and to be remembered about your bills d
 - [ ] User authentication
 - [ ] User authorization
 
-### Disclosure
-This simple project it's a personal excuse to try and learn new and hyped technologies.
-I want to build this software using:
+### Disclaimer
+This project it's a personal excuse to try and learn new and hyped technologies.
 
-- [ ] Java 14+
-- [ ] Spring Boot 2.3+
-- [ ] 100% test coverage
-- [ ] Docker
-- [ ] Kubernets
-- [ ] CI/CD
-- [ ] AWS Services (S3, DynamoDB, ...)
-- [ ] Distributed cache
-- [ ] Distributed Tracing
+### Used Stack
+- [x] Java 14+
+- [x] Spring Boot 2.3+
 
 ### How to run
 _TODO_
