@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @Slf4j
@@ -16,9 +17,8 @@ import java.util.UUID;
 public class BillController {
 
     @PostMapping
-    public IdResponse create(@RequestBody CreateBillRequest request) {
-        log.info("M=create, creating bill, request={}", request);
+    public IdResponse create(@Valid @RequestBody CreateBillRequest request) {
+        log.info("M=create, creating a new bill, request={}", request);
         return new IdResponse(UUID.randomUUID().toString());
     }
-
 }

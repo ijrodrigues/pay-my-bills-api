@@ -1,11 +1,19 @@
 package br.com.paymybills.paymybills.application.request.bill;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import br.com.paymybills.paymybills.domain.Bill;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import static com.fasterxml.jackson.annotation.JsonFormat.Shape.STRING;
 import static lombok.AccessLevel.PRIVATE;
 
 @Getter
@@ -14,21 +22,32 @@ import static lombok.AccessLevel.PRIVATE;
 @AllArgsConstructor
 public class CreateBillRequest {
 
-    @JsonUnwrapped
-    private TitleRequest title;
+    public enum Status {
+        PENDING, PAID, CANCELED, OVERDUE, RESCHEDULE
+    }
 
-    @JsonUnwrapped
-    private DescriptionRequest description;
+    public enum Type {
+        TO_PAY, TO_RECEIVE
+    }
 
-    @JsonUnwrapped
-    private TypeRequest type;
+    @NotBlank
+    private String title;
 
-    @JsonUnwrapped
-    private AmountRequest amount;
+    private String description;
 
-    @JsonUnwrapped
-    private DueDateRequest dueDate;
+    @NotNull
+    private Type type;
 
-    @JsonUnwrapped
-    private StatusRequest status;
+    @NotNull
+    @PositiveOrZero
+    private BigDecimal amount;
+
+    @JsonFormat(shape = STRING, pattern = "dd-MM-yyyy")
+    private LocalDate dueDate;
+
+    private Status status;
+
+    public Bill toModel() {
+        return null;
+    }
 }

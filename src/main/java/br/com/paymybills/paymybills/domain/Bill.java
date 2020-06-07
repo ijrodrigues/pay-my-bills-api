@@ -17,11 +17,11 @@ import static lombok.AccessLevel.PRIVATE;
 @AllArgsConstructor(access = PRIVATE)
 public class Bill {
 
-    private Id id;
-    private Title title;
-    private Description description;
-    private Type type;
-    private Amount amount;
-    private DueDate dueDate;
-    private Status status;
+    private final Id id;
+    private final Title title;
+    private final Description description;
+    private final Type type;
+    private final Amount amount;
+    private final DueDate dueDate;
+    private final Status status;
 }
