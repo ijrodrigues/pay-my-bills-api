@@ -1,4 +1,12 @@
 package br.com.paymybills.paymybills.application.response;
 
-public record IdResponse(String value) {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class IdResponse {
+    private String value;
 }

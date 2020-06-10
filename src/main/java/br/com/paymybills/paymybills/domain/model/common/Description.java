@@ -1,4 +1,12 @@
 package br.com.paymybills.paymybills.domain.model.common;
 
-public record Description(String value) {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Description {
+    private String value;
 }
